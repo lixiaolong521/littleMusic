@@ -1,0 +1,6 @@
+/* pages/logs/logs.wxss */
+.duanluo{
+  font-size: 32rpx;
+  line-height: 60rpx;
+  text-indent: 4rpx;
+}

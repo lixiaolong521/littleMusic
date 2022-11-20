@@ -1,0 +1,35 @@
+<view class="recommendSongContainer">
+  <!-- 头部 -->
+  <view class="header">
+    <image src="/static/images/recommendSong/recommendSong.jpg" mode=""/>
+    <view class="date">
+      <text class="datetime">{{dateTime}}</text>
+    </view>
+  </view>
+  <!-- 列表区域 -->
+  <view class="ListContainer">
+    <view class="listHeader">
+      <text>播放全部</text>
+      <text class="changeMore">多选</text>
+    </view>
+
+      <!-- 内容区 -->
+    <scroll-view scroll-y class="listScroll">
+      <view class="scrollItem" wx:for="{{resource}}" wx:key="id" wx:for-item="vote" wx:for-index="idx" bindtap="toSongDetail" data-id="{{vote.id}}">
+        <image src="{{vote.al.picUrl}}" mode=""/>
+        <view class="musicInfo">
+          <text class="musicName">{{vote.name}}<text class="ch-name" wx:if="{{vote.tns.length>0}}">({{vote.tns}})</text></text>
+          <!-- 演唱歌手名字 -->
+          <view>
+            <text class="Singer" wx:for="{{vote.ar}}" wx:for-item="trade" wx:key="id">{{trade.name}}<text class="separate" wx:if="{{index != vote.ar.length-1}}">/</text>
+            </text>
+          </view>
+          
+        </view>
+        <text class="iconfont icon-gengduo"></text>
+      </view>
+    </scroll-view>
+  </view>
+
+
+</view>
